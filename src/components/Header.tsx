@@ -1,5 +1,5 @@
 import Logo from "../assets/logo.svg";
-import SearchBar from "./SearchBar.jsx";
+import SearchBar from "./SearchBar";
 import { NavLink } from "react-router";
 
 const Header = () => {

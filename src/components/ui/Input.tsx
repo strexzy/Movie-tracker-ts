@@ -1,6 +1,6 @@
-import type { IBaseUI } from "../../types/ui";
+import type { IInputUI } from "../../types/ui";
 
-export const Input = ({ className = "", ...props }: IBaseUI) => {
+export const Input = ({ className = "", ...props }: IInputUI) => {
   return (
     <input
       className={

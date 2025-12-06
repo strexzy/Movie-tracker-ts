@@ -1,18 +1,24 @@
-import { Input } from "./ui/Input";
+import { Input } from "./ui/Input.tsx";
 import { useForm } from "react-hook-form";
-import MovieContext from "../context/MovieContext";
-import { useContext, useState } from "react";
+import { useMovie } from "../context/MovieContext";
+import { useState } from "react";
 import MovieSearchList from "./MovieSearchList";
+import type { TIsVisible, IFormTypes } from "../types/components";
 
 const SearchBar = () => {
-  const { search, getSearch } = useContext(MovieContext);
-  const [isVisible, setIsVisible] = useState(false);
+  const { search, getSearch } = useMovie();
+  const [isVisible, setIsVisible] = useState<TIsVisible>(false);
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<IFormTypes>();
 
-  const onSubmit = ({ searchField }) => {
-    getSearch(searchField.trim());
-    setIsVisible(true);
+  const onSubmit = async ({ searchField }: IFormTypes): Promise<void> => {
+    const q = searchField.trim();
+    try {
+      await getSearch(q);
+      setIsVisible(true);
+    } catch (error) {
+      throw new Error("Search failed");
+    }
   };
 
   return (
@@ -23,11 +29,9 @@ const SearchBar = () => {
           {...register("searchField")}
         />
         {isVisible && (
-          <MovieSearchList
-            className="absolute"
-            visibilityChanger={setIsVisible}
-            search={search}
-          />
+          <div className="absolute">
+            <MovieSearchList visibilityChanger={setIsVisible} search={search} />
+          </div>
         )}
       </form>
     </div>

@@ -44,7 +44,7 @@ export interface IUser {
 export type TTitle = string;
 export type TOverview = string;
 export type TYear = string;
-export type TPoster = string | null;
+export type TPoster = string | undefined;
 export type TTrendingMovies = IMovie[];
 export type TSearchMovies = IMovie[];
 export type TSavedMovies = IMovie[];
