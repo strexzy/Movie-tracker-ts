@@ -1,0 +1,13 @@
+import type { IBaseUI } from "../../types/ui";
+
+export const Input = ({ className = "", ...props }: IBaseUI) => {
+  return (
+    <input
+      className={
+        "w-full bg-input-gray rounded-[20px] py-3.75 font-roboto text-xl text-center font-normal placeholder:text-center placeholder:text-gray-500 " +
+        className
+      }
+      {...props}
+    />
+  );
+};
