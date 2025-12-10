@@ -1,5 +1,6 @@
 import type { TSearchMovies, TPoster, ID, TTitle, TGenre } from "./context";
 
+// Base
 export interface IMovieCardPropsBase {
   poster: TPoster;
   name: TTitle;
@@ -7,7 +8,6 @@ export interface IMovieCardPropsBase {
 }
 
 // SearchBar
-
 export type TIsVisible = boolean;
 
 export type IFormTypes = {
@@ -15,24 +15,35 @@ export type IFormTypes = {
 };
 
 // MovieSearchList
-
 export interface IMovieSearchListProps {
   search: TSearchMovies;
   visibilityChanger: (isVisible: TIsVisible) => void;
 }
 
 // MovieCardSearch
-
 export interface IMovieCardSearchProps extends IMovieCardPropsBase {}
 
 // MovieCard
-
 export interface IMovieCardProps extends IMovieCardPropsBase {
   className?: string;
 }
 
 // GenreList
-
 export interface IGenreListProps {
   genres: TGenre[];
+}
+
+// SaveButton
+export type TIsSaved = boolean;
+
+export interface ISaveButtonProps {
+  flag: string;
+  text: string;
+}
+
+//SavedList
+
+export interface ISavedListProps {
+  title: string;
+  className?: string;
 }

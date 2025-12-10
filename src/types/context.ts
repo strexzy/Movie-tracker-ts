@@ -47,13 +47,21 @@ export type TYear = string;
 export type TPoster = string | undefined;
 export type TTrendingMovies = IMovie[];
 export type TSearchMovies = IMovie[];
-export type TSavedMovies = IMovie[];
+export type TSavedMovies = ISavedMovie[];
 export type TErrorMovieMessage = string | null;
 export type TGenre = string;
 export type TQueryParameter = string;
 
 export interface IMovie {
   id: ID;
+  title: TTitle;
+  overview: TOverview;
+  year: TYear;
+  poster: TPoster;
+}
+
+export interface ISavedMovie {
+  movie_id: ID;
   title: TTitle;
   overview: TOverview;
   year: TYear;
