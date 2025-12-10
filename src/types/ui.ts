@@ -12,6 +12,8 @@ export interface IBaseUI {
 
 export interface IInputUI extends IBaseUI {
   placeholder?: string;
+  type?: "password";
+  autoComplete?: string;
 }
 
 export interface IPosterUI extends IBaseUI {
@@ -27,4 +29,9 @@ export interface IRatingUI extends IBaseUI {
 
 export interface IVideoPlayerUI extends IBaseUI {
   trailer?: TTrailer;
+}
+
+export interface IAuthButtonUI extends IBaseUI {
+  disabled?: boolean;
+  type?: "submit" | "reset" | "button";
 }

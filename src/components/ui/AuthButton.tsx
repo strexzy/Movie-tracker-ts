@@ -1,6 +1,10 @@
-import type { IBaseUI } from "../../types/ui";
+import type { IAuthButtonUI } from "../../types/ui";
 
-export const AuthButton = ({ children, className = "", ...props }: IBaseUI) => {
+export const AuthButton = ({
+  children,
+  className = "",
+  ...props
+}: IAuthButtonUI) => {
   return (
     <button
       className={
