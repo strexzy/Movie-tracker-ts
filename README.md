@@ -1,73 +1,46 @@
-# React + TypeScript + Vite
+# Movie-tracker-ts 🎬
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Movie-tracker-ts** — простое веб-приложение на React + TypeScript + Vite + Tailwind, которое позволяет искать фильмы и сериалы, просматривать их, а также собирать свою «watch-лист».
 
-Currently, two official plugins are available:
+## 🧰 Технологии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- TypeScript
+- Vite
+- React Router
+- Tailwind CSS
 
-## React Compiler
+## 🚀 Быстрый старт
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Клонировать репозиторий
+git clone https://github.com/strexzy/Movie-tracker-ts.git
 
-## Expanding the ESLint configuration
+# Перейти в папку проекта
+cd Movie-tracker-ts
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Установить зависимости
+npm install        # или yarn
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Запустить приложение в режиме разработки
+npm run dev        # или yarn dev
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Перейти в браузере по адресу
+http://localhost:3000
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Сборка на продакшен
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build      # или yarn build
 ```
+
+## ✨ Возможности (Features)
+
+- Поиск фильмов / сериалов
+- Просмотр списка найденных медиа
+- Добавление в «watch-лист»
+
+## 🛠️ Почему TypeScript + Vite + React
+
+Проект изначально был на JavaScript и Vite, но теперь переписан на TypeScript — это даёт строгую типизацию, лучший автокомплит и меньше ошибок. Комбинация с Vite обеспечивает быструю разработку с hot-reload. Такой стек — современный, быстрый и удобный для SPA.
