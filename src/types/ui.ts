@@ -17,7 +17,7 @@ export interface IInputUI extends IBaseUI {
 export interface IPosterUI extends IBaseUI {
   alt: string;
   src: string | undefined;
-  ref: React.Ref<HTMLImageElement>;
+  ref?: React.Ref<HTMLImageElement>;
 }
 
 export interface IRatingUI extends IBaseUI {

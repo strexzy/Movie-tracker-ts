@@ -1,4 +1,10 @@
-import type { TSearchMovies, TPoster, ID, TTitle } from "./context";
+import type { TSearchMovies, TPoster, ID, TTitle, TGenre } from "./context";
+
+export interface IMovieCardPropsBase {
+  poster: TPoster;
+  name: TTitle;
+  movieId: ID;
+}
 
 // SearchBar
 
@@ -17,8 +23,16 @@ export interface IMovieSearchListProps {
 
 // MovieCardSearch
 
-export interface IMovieCardSearchProps {
-  poster: TPoster;
-  name: TTitle;
-  movieId: ID;
+export interface IMovieCardSearchProps extends IMovieCardPropsBase {}
+
+// MovieCard
+
+export interface IMovieCardProps extends IMovieCardPropsBase {
+  className?: string;
+}
+
+// GenreList
+
+export interface IGenreListProps {
+  genres: TGenre[];
 }
