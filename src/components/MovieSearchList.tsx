@@ -21,6 +21,7 @@ const MovieSearchList = ({
               poster={movie.poster}
               name={movie.title}
               movieId={movie.id}
+              visibilityChanger={visibilityChanger}
             />
           );
         })}

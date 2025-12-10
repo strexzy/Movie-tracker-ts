@@ -1,7 +1,7 @@
-import { useMovie } from "../context/MovieContext.js";
+import { useMovie } from "../context/MovieContext";
 import { useEffect } from "react";
-import MovieCard from "../components/MovieCard.jsx";
-import type { ISavedListProps } from "../types/components.js";
+import MovieCard from "../components/MovieCard";
+import type { ISavedListProps } from "../types/components";
 
 const SavedList = ({ title, className }: ISavedListProps) => {
   const { savedMovies, getSavedMovies } = useMovie();

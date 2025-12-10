@@ -1,6 +1,10 @@
-import type { IBaseUI } from "../../types/ui";
+import type { IButtonGrayUI } from "../../types/ui";
 
-export const ButtonGray = ({ children, className = "", ...props }: IBaseUI) => {
+export const ButtonGray = ({
+  children,
+  className = "",
+  ...props
+}: IButtonGrayUI) => {
   return (
     <button
       className={

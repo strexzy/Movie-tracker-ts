@@ -21,7 +21,9 @@ export interface IMovieSearchListProps {
 }
 
 // MovieCardSearch
-export interface IMovieCardSearchProps extends IMovieCardPropsBase {}
+export interface IMovieCardSearchProps extends IMovieCardPropsBase {
+  visibilityChanger: (isVisible: TIsVisible) => void;
+}
 
 // MovieCard
 export interface IMovieCardProps extends IMovieCardPropsBase {

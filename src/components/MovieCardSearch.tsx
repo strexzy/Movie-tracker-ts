@@ -6,13 +6,19 @@ import BlankPoster from "../assets/posterBlank.png";
 import type { IMovieCardSearchProps } from "../types/components";
 import type { ID } from "../types/context";
 
-const MovieCardSearch = ({ poster, name, movieId }: IMovieCardSearchProps) => {
+const MovieCardSearch = ({
+  poster,
+  name,
+  movieId,
+  visibilityChanger,
+}: IMovieCardSearchProps) => {
   const { getMovie } = useMovie();
   const navigate = useNavigate();
   const posterRef = useRef<HTMLImageElement>(null);
 
   const handleClick = async (id: ID): Promise<void> => {
     await getMovie(id);
+    visibilityChanger(false);
     navigate("/movies/movie/" + id);
   };
 

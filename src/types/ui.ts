@@ -35,3 +35,7 @@ export interface IAuthButtonUI extends IBaseUI {
   disabled?: boolean;
   type?: "submit" | "reset" | "button";
 }
+
+export interface IButtonGrayUI extends IBaseUI {
+  onClick?: () => void;
+}
